@@ -14,7 +14,7 @@ import { useParams } from "react-router-dom"
             <h2>{item.name}</h2>
             <Link to={`/items/${item.id}/update`}>Atualizar</Link>
             <DeleteButton itemId={item.id} itemName={itemName}/>
-            <div>
+            <div class="campos">
                 <span>Categoria: {item.category}</span>
                 <span>Quantidade em estoque: {item.quantity}</span>
                 <span>Preço: R$ {item.price}</span>

@@ -6,38 +6,38 @@ import DeleteButton from "./DeleteButton"
 export default function ItemsTable() {
     const { items } = useStock()
     return (
-      <table>
-        <thead>
-            <tr>
-                <th>ID</th>
-                <th>Nome</th>
-                <th>Em Estoque</th>
-                <th>Categoria</th>
-                <th>Ações</th>
-            </tr>
-        </thead>
-        <tbody>
-            {items.map((item) => (
-                <tr key={item.id}>
-                    <td>{item.id}</td>
-                    <td>{item.name}</td>
-                    <td>{item.quantity} unid.</td>
-                    <td>{item.category}</td>
-                    <td>
-                    <Link to={`/items/${item.id}`} >
-                        Ver
-                        </Link>
-                        <Link to={`/items/${item.id}/update`}>
-                        Atualizar
-                        </Link>
-                        <DeleteButton itemId={item.id} itemName={item.name}/>
-                    </td>
-
+      <div className="table-wrapper">
+          <table >
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nome</th>
+                    <th>Em Estoque</th>
+                    <th>Categoria</th>
+                    <th>Ações</th>
                 </tr>
-
-            ))}
-        </tbody>
-      </table>
+            </thead>
+            <tbody>
+                {items.map((item) => (
+                    <tr key={item.id}>
+                        <td>{item.id}</td>
+                        <td>{item.name}</td>
+                        <td>{item.quantity} unid.</td>
+                        <td>{item.category}</td>
+                        <td>
+                        <Link to={`/items/${item.id}`} >
+                            Ver
+                            </Link>
+                            <Link to={`/items/${item.id}/update`}>
+                            Atualizar
+                            </Link>
+                            <DeleteButton itemId={item.id} itemName={item.name}/>
+                        </td>
+                    </tr>
+                ))}
+            </tbody>
+          </table>
+      </div>
 
     )
 }

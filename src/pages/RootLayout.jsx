@@ -14,7 +14,7 @@ export default function RootLayout() {
                     <Link to="/items">Todos os itens</Link>
                 </nav>
             </header>
-            <div>
+            <div class="outlet">
                 <Outlet/>
             </div>
             

@@ -40,22 +40,32 @@ function ItemForm({ itemToUpdate }) {
         ev.preventDefault()
 
         try {
-            if (itemToUpdate){
-                updateItem(itemToUpdate.id, item)
-                alert("Item atualizado com sucesso")
-            }else {
-                const validItem = new StockItem(item)
-            console.log(validItem)
-            alert("Item cadastrado com sucesso!")
-            setItem (defaultItem)
-            
-            }
-            
-        } catch (error) {
-            console.log(error.message)
-        } finally {
-            inputRef.current.focus()
+            const validItem = new StockItem(item)
+           addItem(validItem)
+           setItem(defaultItem)
+           alert("Item atualizado com sucesso")
+           inputRef.current.focus()
+        } catch (err) {
+            console.log(err.message)
         }
+
+        //try {
+            //if (itemToUpdate){
+                //updateItem(itemToUpdate.id, item)
+                //alert("Item atualizado com sucesso")
+           // }else {
+                //const validItem = new StockItem(item)
+            ///console.log(validItem)
+            //alert("Item cadastrado com sucesso!")
+            //setItem (defaultItem)
+            
+          //  }
+            
+       // } catch (error) {
+            //console.log(error.message)
+       //} finally {
+           // inputRef.current.focus()
+        //}
     }
 
     return (
@@ -129,7 +139,7 @@ function ItemForm({ itemToUpdate }) {
                     onChange={handleChange}
                 />
             </div>
-            <button className="Button is-primary is-large">Salvar</button>
+            <button className="button">Salvar</button>
         </form>
     );
 }

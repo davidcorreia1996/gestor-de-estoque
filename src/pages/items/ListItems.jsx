@@ -6,7 +6,7 @@ export default function ListItems() {
         <div>
             <h2>Todos itens!!</h2>
             <ItemsTable/>
-            <Outlet/>
+            
         </div>
     )
 }

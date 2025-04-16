@@ -16,23 +16,23 @@ export default function Home (){
     const lowQuantityItems = items.filter((item) => item.quantity < 10)
     const lowQuantityTotal = lowQuantityItems.length
     return (
-        <main>
+        <main class="principal" >
             <h1>Página Inicial</h1>
-            <div>
-                <div>
-                    Diversidade de itens,
+            <div class="cards-container">
+                <div class="card">
+                    <p>Diversidade de itens</p>
                     <span>{diversity}</span>
+                
                 </div>
-            </div>
-            <div>
-                <div>
-                    Inventário Total
+            
+                <div class="card">
+                    <p>Inventário Total</p>
                     <span>{inventoryTotal}</span>
                 </div>
-            </div>
-            <div>
-                <div>
-                    Itens acabando
+            
+            
+                <div class="card">
+                    <p>Itens acabando</p>
                     <span>{lowQuantityTotal}</span>
                 </div>
             </div>

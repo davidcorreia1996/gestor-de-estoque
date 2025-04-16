@@ -20,6 +20,7 @@ export function StockContextProvider ({ children}) {
     return items  
     })
 
+    //function adicionar item
     const addItem = (item) => {
         setItems(currentState => {
             const updateItems = [item, ...currentState]
@@ -28,18 +29,23 @@ export function StockContextProvider ({ children}) {
         })
     }
 
+    //function pegar item
     const getItem = (itemId) => {
         return items.find(item => item.id === +itemId)
     }
 
+
+    //function atualizar item
     const updateItem = (itemId, newAttributes) => {
         setItems ( currentState => {
             const itemIndex = currentState.findIndex(item => item. id === itemId)
             const updateItem = [...currentState]
-            Object.assign(updatedItems[itemIndex], newAttributes, { updatedAt: new Date () })
+            Object.assign(updateItem[itemIndex], newAttributes, { updatedAt: new Date () })
         })
     }
 
+
+    //function excluir item
     const deleteItem = (itemId) => {
         setItems(currentState => {
             const updateItems = currentState.filter(item => item.id !== itemId) 
